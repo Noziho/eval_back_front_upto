@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@400&display=swap');
+html {
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #F5F5F5;
+    font-size: 1.6rem;
+    font-family: 'Noto Serif Display', serif;
+    color: #222222;
+}
+/* Main menu */
+
+header {
+    height: 7rem;
+    background: #FFFAFA;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+.main-menu {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-menu-logo {
+    display: none;
+    font-size: 3rem;
+}
+
+ul, li {
+    display: flex;
+    list-style-type: none;
+}
+li {
+    margin-inline: 3rem;
+}
+
+.header-link {
+    width: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header-logo-title {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10rem;
+}
+
+
+* a {
+    text-decoration: none;
+    color: #2f2e2e;
+}
+
+.show {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.hide {
+    display: none;
+}
+
+/* Main container/ Article/Create article/Commentary container */
+
+main {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 5rem;
+    align-content: space-between;
+    justify-content: space-around;
+}
+
+.article-container, .creation-article-container, .commentary-container {
+    width: 55%;
+    background: #FFFAFA;
+    height: 50rem;
+    padding: 3rem;
+    overflow: auto;
+}
+
+.creation-article-container, .commentary-container {
+    height: inherit;
+    min-height: 40rem;
+    overflow: inherit;
+}
+
+.commentary-container {
+    margin-top: 5rem;
+}
+
+.article-title {
+    width: 100%;
+}
+
+
+/* Container articles/Users */
+.articles, .users, .commentary {
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+.commentary > div > p {
+    word-break: break-all;
+}
+
+
+.title-list-article, .title-list-commentary {
+    border-bottom: 1px solid black;
+}
+
+.articles:hover, .users:hover {
+    background: rgba(47, 46, 46, 0.11);
+}
+
+
+
+/* Forms */
+
+.form-container, .edit-form-container {
+    min-width: 70%;
+    background: #FFFAFA;
+    padding: 2rem;
+    min-height: 40rem;
+}
+
+.edit-form-container {
+    width: 70%;
+}
+
+label, input {
+    display: block;
+    margin-top: 1rem;
+}
+
+.form-button {
+    width: 65%;
+    background: #F5F5F5;
+    color: #2f2e2e;
+    border: none;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-top: 20rem;
+}
+
+/* container for success/error message */
+.error-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    height: 7rem;
+    width: 100%;
+    color: honeydew;
+    font-size: 2rem;
+}
+
+.error {
+    background: indianred;
+}
+
+.success {
+    background: mediumseagreen;
+}
+
+/* delete/edit style button */
+.delete, .edit {
+    color: indianred;
+    margin-left: 2rem;
+    text-decoration: underline;
+}
+
+.edit {
+    color: mediumseagreen;
+    margin-left: inherit;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    height: 5rem;
+    background: #FFFAFA;
+    margin-top: 15rem;
+
+}
+
+/* Responsive */
+
+@media screen and (max-width: 1000px) {
+    main {
+        flex-flow: column wrap;
+    }
+
+    .article-container, .commentary-container, .creation-article-container {
+        width: 100%;
+    }
+
+    .discord-iframe {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+
+    main {
+        padding: 1rem;
+    }
+
+
+    .main-menu {
+        justify-content: inherit;
+        width: 100%
+    }
+
+    .header-logo-title {
+        width: 100%;
+        display: flex;
+        justify-content: inherit;
+        margin-left: 1rem;
+    }
+
+    .container-menu-logo + h1 {
+        margin-left: 20rem;
+    }
+
+
+    #content {
+        width: 100%;
+    }
+
+    .container-menu-logo {
+        display: flex;
+    }
+
+    ul {
+        display: none;
+    }
+
+    header {
+        min-height: 7rem;
+        height: auto;
+    }
+
+}
