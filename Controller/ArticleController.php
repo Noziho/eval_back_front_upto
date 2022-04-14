@@ -47,8 +47,11 @@ class ArticleController extends AbstractController
             if (!$this->formIsset('title', 'resume', 'content')) {
                 header("Location: /index.php?c=article&a=create-article&f=2");
             }
+            $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
+            $resume = filter_var($_POST['resume'], FILTER_SANITIZE_STRING);
+            $content = filter_var($_POST['content'], FILTER_SANITIZE_STRING);
 
-            ArticleManager::createArticle($id);
+            ArticleManager::createArticle($id, $title, $resume, $content);
 
         }
     }

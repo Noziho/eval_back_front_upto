@@ -51,17 +51,12 @@ class ArticleManager
             ->setTitle($data['title']);
     }
 
-    public static function createArticle(int $id)
+    public static function createArticle(int $id, string $title, string $resume, string $content)
     {
         $stmt = DB_Connect::dbConnect()->prepare("
             INSERT INTO " . self::TABLE . " (title, resume, content, user_fk)
             VALUES (:title, :resume, :content, :user_fk)
         ");
-
-        $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
-        $resume = filter_var($_POST['resume'], FILTER_SANITIZE_STRING);
-        $content = filter_var($_POST['content'], FILTER_SANITIZE_STRING);
-
 
         $stmt->bindParam(':title', $title);
         $stmt->bindParam(':resume', $resume);

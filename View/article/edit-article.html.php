@@ -3,6 +3,7 @@ use App\Controller\AbstractController;
 use App\Model\Entity\Article;
 
 AbstractController::redirectIfNotAllow();
+AbstractController::redirectIfRedact();
 $messages = [
     "Error: Un champ est manquant",
     "Error: Le champ titre doit contenir entre 4 et 100 caractères.",

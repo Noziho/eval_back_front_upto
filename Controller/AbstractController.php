@@ -88,4 +88,23 @@ abstract class AbstractController
             }
         }
     }
+
+    public static function redirectIfRedact () {
+        if (!isset($_SESSION['user'])) {
+            header("Location: /index.php?c=home");
+        }
+        elseif (isset($_SESSION['user'])) {
+
+            /* @var User $user */
+            $user = $_SESSION['user'];
+
+            foreach ($user->getRole() as $role) {
+                /* @var Role $role */
+                if($role->getRoleName() === 'Rédacteur') {
+                    header("Location: index.php?c=home");
+                }
+
+            }
+        }
+    }
 }

@@ -5,6 +5,7 @@ use App\Model\Entity\Role;
 use App\Model\Entity\User;
 
 AbstractController::redirectIfNotAllow();
+AbstractController::redirectIfRedact();
 /* @var User $user */
 $user = $data['user'];
 

@@ -3,6 +3,7 @@
 use App\Controller\AbstractController;
 
 AbstractController::redirectIfNotAllow();
+AbstractController::redirectIfRedact();
 ?>
 
 <div class="creation-article-container">

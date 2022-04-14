@@ -21,8 +21,7 @@ $messages = [
 if (isset($_GET['f'])) {
     $index = (int)$_GET['f'];
     $message = $messages[$index]; ?>
-    <div class="error-message <?= strpos($message, "Error: ") === 0 ? 'error' : 'success' ?>"
-         xmlns="http://www.w3.org/1999/html"><?= $message ?></div>
+    <div class="error-message <?= strpos($message, "Error: ") === 0 ? 'error' : 'success' ?>"><?= $message ?></div>
     <?php
 }
 

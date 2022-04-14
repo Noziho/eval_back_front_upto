@@ -18,7 +18,7 @@ class CommentaryController extends AbstractController
                 header("Location: /index.php?c=home&f=7");
                 exit();
             }
-            $this->checkRange($_POST['content'], '10', '255', '/index.php?c=home&f=8');
+            $this->checkRange(filter_var($_POST['content'], FILTER_SANITIZE_STRING), '10', '255', '/index.php?c=home&f=8');
 
             CommentaryManager::addComment($id);
 

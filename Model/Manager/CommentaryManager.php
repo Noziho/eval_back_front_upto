@@ -43,8 +43,6 @@ class CommentaryManager
         ");
 
 
-        $content = filter_var($_POST['content'], FILTER_SANITIZE_STRING);
-
         if (isset($_SESSION['user'])) {
 
             $user = $_SESSION['user'];
